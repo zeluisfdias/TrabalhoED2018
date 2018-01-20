@@ -20,10 +20,25 @@ import recursos.interfaces.IFormiga;
 
 public class Formiga implements IFormiga, Serializable {
 
+    /**
+     * Chave de identificação de uma dada formiga 
+     */
     private int idFormiga;
+    /**
+     * Atributo indicativo da capacidade de carga de uma dada formiga.
+     */
     private int capacidadeCarga;
+    /**
+     * Lista Desordenada de comidas de uma dada formiga
+     */
     private ArrayUnorderedList comidasFormiga;
 
+    
+    /**
+     * Construtor que permite criar uma dada formiga, atribuindo lhe os parametros seguintes
+     * @param idFormiga identificador
+     * @param capacidadeCarga  capacidade máxima de comida que pode carregar
+     */
     public Formiga(int idFormiga, int capacidadeCarga) {
         this.idFormiga = idFormiga;
         this.capacidadeCarga = capacidadeCarga;

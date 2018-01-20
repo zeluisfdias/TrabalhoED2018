@@ -6,6 +6,7 @@
 package Classes;
 
 import Collections.ArrayUnorderedList;
+import java.util.Iterator;
 import recursos.exceptions.ElementNotFoundException;
 import recursos.exceptions.EmptyCollectionException;
 import recursos.interfaces.IFormiga;
@@ -18,12 +19,12 @@ import recursos.interfaces.collections.UnorderedListADT;
  * @author Zé Luís
  */
 public class Sala implements ISala {
-    
+
     private int Id;
     private String Descricao;
     private int x;
     private int y;
-    
+
     private ArrayUnorderedList formigasSala; //array de formigas na sala
 
     /**
@@ -40,6 +41,7 @@ public class Sala implements ISala {
         this.Descricao = Descricao;
         this.x = x;
         this.y = y;
+        this.formigasSala = new ArrayUnorderedList();
     }
 //Metodos de acesso as variaveis privadas da classe
 
@@ -106,8 +108,22 @@ public class Sala implements ISala {
      */
     @Override
     public IFormiga saiFormiga(int i) throws EmptyCollectionException, ElementNotFoundException {
-        return null;
-       
+        Formiga formiga_ExistInst = null;
+        Iterator iterator_FormigasRoom = formigasSala.iterator();
+
+        if (iterator_FormigasRoom.hasNext()) {
+            formiga_ExistInst = (Formiga) iterator_FormigasRoom.next();
+
+            if (formiga_ExistInst.getId() == i) {
+                formigasSala.remove(formiga_ExistInst);
+                return formiga_ExistInst;
+            } else {
+                throw new ElementNotFoundException("A formiga não existe");
+            }
+        } else {
+            throw new Exceptions.EmptyCollectionException("Não existem formigas para remover");
+        }
+
     }
 
     /**
@@ -117,7 +133,7 @@ public class Sala implements ISala {
      */
     @Override
     public UnorderedListADT<IFormiga> listaFormigas() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
-    
+
 }
