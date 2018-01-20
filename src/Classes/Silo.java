@@ -11,7 +11,14 @@ import recursos.interfaces.IComida;
 import recursos.interfaces.ISilo;
 
 /**
- *
+ * SubClasse Silo da Classe Pai Sala, usada para representar um Silo
+ * Usa os atributos da Classe Pai
+ * Para o empilhamento de comida teremos que usar Stack pois o Silo é uma estrutura vertical (Stack) que as formigas depositam
+ * comida uma em cima das outra. 
+ * Quando eliminam é a primeira do topo que sai.
+ * O silo não tem limite de espaço 
+ * 
+ * FIFO - First In First Out
  * @author Zé Luís
  */
 public class Silo extends Sala implements ISilo {
