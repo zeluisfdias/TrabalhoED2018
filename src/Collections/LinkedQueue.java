@@ -7,6 +7,7 @@ package Collections;
 
 import Exceptions.EmptyCollectionException;
 import java.util.Iterator;
+import recursos.interfaces.collections.QueueADT;
 
 /**
  *
@@ -77,6 +78,26 @@ public class LinkedQueue<T> implements QueueADT<T>, Iterable<T> {
     public Iterator<T> iterator() {
         return new BasicIterator<>();
     }
+
+    public LinearNode getFront() {
+        return front;
+    }
+
+    public void setFront(LinearNode front) {
+        this.front = front;
+    }
+
+    public LinearNode getRear() {
+        return rear;
+    }
+
+    public void setRear(LinearNode rear) {
+        this.rear = rear;
+    }
+    
+    
+    
+    
     
     public class BasicIterator<T> implements Iterator<T>{
 

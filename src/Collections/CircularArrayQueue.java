@@ -6,6 +6,7 @@
 package Collections;
 
 import Exceptions.EmptyCollectionException;
+import recursos.interfaces.collections.QueueADT;
 
 /**
  *
