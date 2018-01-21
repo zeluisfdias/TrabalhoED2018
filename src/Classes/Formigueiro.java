@@ -23,6 +23,7 @@ import recursos.interfaces.ITunel;
 public class Formigueiro implements IFormigueiro{
 
     private Sala salaEntrada;
+   // private NetworkGraph grafoOfNetwork;
 
     /**
      * Construtor para criar um novo formigueiro.
